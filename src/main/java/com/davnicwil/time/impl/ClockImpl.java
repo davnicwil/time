@@ -14,6 +14,8 @@ public class ClockImpl implements Clock {
         this.currentTime = currentTime;
     }
 
+    public Long now() { return currentTime.get(); }
+
     public Boolean withinLastMinute(Long timestamp) {
         Long interval = currentTime.get() - timestamp;
         return 	0 <= interval && interval < 60000l;
